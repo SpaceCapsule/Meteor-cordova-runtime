@@ -1,0 +1,16 @@
+{
+  "name": "cordova-runtime",
+  "description": "Use Cordova for runtime solution",
+  "homepage": "https://github.com/SpaceCapsule/Meteor-cordova-runtime",
+  "author": "Morten Henriksen  (http://gi-software.com)",
+  "version": "0.0.1",
+  "git": "https://github.com/SpaceCapsule/Meteor-cordova-runtime.git",
+  "packages": {
+    "runtime" : {
+      "git": "https://github.com/SpaceCapsule/Meteor-runtime.git"
+    },
+    "runtime-appcache": {
+      "git": "https://github.com/SpaceCapsule/Meteor-runtime-appcache.git"
+    }
+  }
+}

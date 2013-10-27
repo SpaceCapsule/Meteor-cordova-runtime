@@ -23,7 +23,10 @@ Add the cordova files to your app private folder and add them to the `CordovaRun
 
   // Add the specific cordova file for android on cordova version 3.0.0
   cordovaRuntime.addFile('android', '3.0.0', 'cordova-3.0.0-android.js');
+  // cordovaRuntime.addFile('android', '3.0.0', 'plugin-3.0.0-android.js');
+
 ```
+*As the example shows its possible to add multiple files pr. platform and version - eg. adding plugin code pr. platform if needed*
 
 ##Fallback
 We have to have a native fallback on initial load or if something goes wrong loading. Try using the following code:

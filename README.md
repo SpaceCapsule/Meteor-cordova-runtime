@@ -34,14 +34,17 @@ We have to have a native fallback on initial load or if something goes wrong loa
 
 ###iOS
 ```
-  (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+  - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
   {
      // here you can either check for the error type or for the url that has failed to load
-     if([webView.request.url.absoluteString isEqualToString:@"your_remote_url")]
+     NSString *failingURL = [error.userInfo objectForKey:@"NSErrorFailingURLStringKey"];
+     // This should be the local HTML file that you want to load when failing, by default we use www/index.html
+     NSString *localPath = [[NSBundle mainBundle] pathForResource:@"index.html" ofType:nil inDirectory:@"www"];
+     if([failingURL isEqualToString:@"your_remote_url"])
      {
-        NSURL *url = [NSURL urlWithString:@"your_local_url"];
+        NSURL *url = [NSURL fileURLWithPath:localPath];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        [webview loadRequest:request];
+        [webView loadRequest:request];
      }
   }
 ```

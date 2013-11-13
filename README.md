@@ -33,7 +33,7 @@ We have to have a native fallback on initial load or if something goes wrong loa
 [Stackoverflow ref](http://stackoverflow.com/questions/17294338/phonegap-cordova-ios-load-remote-url-how-to-fallback-to-local-index-html-on-er)
 
 ###iOS
-```
+```objc
   - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
   {
      // here you can either check for the error type or for the url that has failed to load

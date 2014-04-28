@@ -25,7 +25,7 @@ CordovaRuntime = function(client_assets) {
   // and get served platform specific javascript
   Runtime.package(client_assets, function(api) {
     var platform = api.query.platform;
-    var version = api.query.cordova;
+    var version = api.query.cordova.replace(/\/$/, "");
 
     // If version and platform found
     if (platform && version) {

@@ -1,3 +1,5 @@
+DEPRECATED: No longer maintained
+
 Cordova Runtime
 ==============
 
